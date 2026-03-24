@@ -51,6 +51,22 @@ To use this with MCP clients, for instance, Claude Desktop, add the following to
 }
 ```
 
+To run it directly from npm without editing config first:
+```bash
+npx -y @fanyangmeng/ghost-mcp
+```
+
+## Publishing to npm (for npx)
+
+If you maintain this package and want to push a new version for `npx` users:
+
+```bash
+npm version patch
+npm publish --access public
+```
+
+The package runs a build automatically during publish and ships the compiled `build/` output used by `npx`.
+
 ## Available Resources
 
 The following Ghost CMS resources are available through this MCP server:

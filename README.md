@@ -73,8 +73,9 @@ This MCP server exposes a comprehensive set of tools for managing your Ghost CMS
 ### Posts
 - **Browse Posts**: List posts with optional filters, pagination, and ordering.
 - **Read Post**: Retrieve a post by ID or slug.
-- **Add Post**: Create a new post with title, content, and status.
-- **Edit Post**: Update an existing post by ID.
+- **Add Post**: Create a new post with title, content, status, and metadata fields (canonical URL, meta tags, OG/Twitter image/title/description).
+- **Edit Post**: Update an existing post by ID, including content and metadata fields.
+- **Edit Post Metadata**: Update SEO and social metadata fields (OG, Twitter, canonical URL, meta title/description) without changing post content.
 - **Delete Post**: Remove a post by ID.
 
 ### Members

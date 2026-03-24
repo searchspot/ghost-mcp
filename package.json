@@ -1,6 +1,6 @@
 {
-    "name": "@fanyangmeng/ghost-mcp",
-    "version": "0.1.0",
+    "name": "@searchspot.ai/ghost-mcp",
+    "version": "0.1.1",
     "description": "MCP server for using the Ghost API",
     "main": "build/server.js",
     "bin": {
@@ -19,7 +19,7 @@
         "access": "public"
     },
     "keywords": [],
-    "author": "Fanyang Meng (https://mfydev.link)",
+    "author": "SearchSpot.ai [Forked from Fanyang Meng (https://mfydev.link)]",
     "license": "ISC",
     "type": "commonjs",
     "dependencies": {

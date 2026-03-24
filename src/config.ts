@@ -1,15 +1,23 @@
-// Read configuration values directly from process.env
-export const GHOST_API_URL: string = process.env.GHOST_API_URL as string;
-export const GHOST_ADMIN_API_KEY: string = process.env.GHOST_ADMIN_API_KEY as string;
-export const GHOST_API_VERSION: string = process.env.GHOST_API_VERSION as string || 'v5.0'; // Default to v5.0
-
-// Basic validation to ensure required environment variables are set
-if (!GHOST_API_URL) {
-    console.error("Error: GHOST_API_URL environment variable is not set.");
-    process.exit(1);
+export interface GhostApiConfig {
+    key: string;
+    url: string;
+    version: string;
 }
 
-if (!GHOST_ADMIN_API_KEY) {
-    console.error("Error: GHOST_ADMIN_API_KEY environment variable is not set.");
-    process.exit(1);
+function getRequiredEnv(name: "GHOST_API_URL" | "GHOST_ADMIN_API_KEY"): string {
+    const value = process.env[name];
+
+    if (!value) {
+        throw new Error(`Missing required environment variable: ${name}`);
+    }
+
+    return value;
+}
+
+export function getGhostApiConfig(): GhostApiConfig {
+    return {
+        url: getRequiredEnv("GHOST_API_URL"),
+        key: getRequiredEnv("GHOST_ADMIN_API_KEY"),
+        version: process.env.GHOST_API_VERSION || "v5.0"
+    };
 }

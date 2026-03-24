@@ -10,9 +10,10 @@
         "build/"
     ],
     "scripts": {
-        "build": "tsc",
+        "build": "tsc && chmod +x build/server.js",
         "start": "node build/server.js",
         "prepare": "npm run build",
+        "prepublishOnly": "npm run build",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "publishConfig": {

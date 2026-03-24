@@ -14,9 +14,11 @@ import {
 } from './resources'; // Import resource handlers
 
 // Create an MCP server instance
+const { version: packageVersion } = require("../package.json") as { version: string };
+
 const server = new McpServer({
     name: "ghost-mcp-ts",
-    version: "1.0.0", // TODO: Get version from package.json
+    version: packageVersion,
     capabilities: {
         resources: {}, // Capabilities will be enabled as handlers are registered
         tools: {},
